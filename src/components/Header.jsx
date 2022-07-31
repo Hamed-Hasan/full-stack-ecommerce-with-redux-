@@ -4,7 +4,22 @@ import { motion } from 'framer-motion';
 import { MdShoppingBasket } from 'react-icons/md'
 import { Link } from 'react-router-dom';
 import Logo from '../img/logo.png'
+
+
+
+
+
 const Header = () => {
+
+
+
+  const showCart = () => {
+    dispatch({
+      type: actionType.SET_CART_SHOW,
+      cartShow: !cartShow,
+    });
+  };
+
     return (
         <header className="fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-primary">
           <div className='hidden md:flex w-full h-full items-center justify-between'>
@@ -26,6 +41,13 @@ className='flex items-center gap-24'
 <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>About Us</li>
 <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>Services</li>
 </motion.ul>
+
+<div className='relative flex items-center justify-center'
+onClick={showCart}
+>
+
+</div>
+
 </div>
 
           </div>
