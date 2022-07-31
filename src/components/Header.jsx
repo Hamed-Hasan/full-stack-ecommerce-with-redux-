@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { MdShoppingBasket } from 'react-icons/md'
 import { Link } from 'react-router-dom';
 import Logo from '../img/logo.png'
-
+import Avatar from '../img/avatar.png'
 import { useStateValue } from '../context/StateProvider'
 
 
@@ -12,13 +12,13 @@ import { useStateValue } from '../context/StateProvider'
 
 const Header = () => {
 
-const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
+  const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
 
   const showCart = () => {
-    dispatch({
-      type: actionType.SET_CART_SHOW,
-      cartShow: !cartShow,
-    });
+    // dispatch({
+    //   type: actionType.SET_CART_SHOW,
+    //   cartShow: !cartShow,
+    // });
   };
 
     return (
@@ -54,6 +54,11 @@ className='flex items-center gap-24'
                 </p>
               </div>
             )}
+          </div>
+          <div className='relative'>
+              <motion.img whileTap={{ scale: 0.6 }}
+              src={user ? user.photoURL : Avatar}
+              />
           </div>
 
 </div>
