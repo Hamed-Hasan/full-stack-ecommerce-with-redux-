@@ -40,10 +40,20 @@ className='flex items-center gap-24'
 <div className="relative flex items-center justify-center">
 <MdShoppingBasket className="text-textColor text-2xl  cursor-pointer" />
 
-<div className='absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center'>
+<div className='absolute top-1 -left circle w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center'>
 <p className="text-xs text-white font-semibold">
         2
    </p>
+</div>
+
+<div className='relative'>
+<motion.img
+              whileTap={{ scale: 0.6 }}
+              src={Avatar}
+              className="w-10 min-w-[40px] h-10 min-h-[40px] -shadow-xl  ml-6 cursor-pointer rounded-full"
+              alt="userprofile"
+            
+            />
 </div>
 </div>
 
