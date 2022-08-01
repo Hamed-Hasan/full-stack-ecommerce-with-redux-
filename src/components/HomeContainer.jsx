@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Delivery from '../img/delivery.png'
 const HomeContainer = () => {
     return (
         <section className='grid grid-cols-1 md:grid-cols-2 gap-2 w-full' id="home">
@@ -8,8 +8,15 @@ const HomeContainer = () => {
                 <p className='text-base text-orange-500 font-semibold'>
                 Bike Delivery
                 </p>
-                
+                <div className='w-8 h-8 bg-white rounded-full overflow-hidden drop-shadow-xl'>
+                    <img src={Delivery} 
+                    className='w-full h-full object-contain'
+                    alt="delivery" />
+                </div>
             </div>
+
+
+            
         </div>
         
     </section>
