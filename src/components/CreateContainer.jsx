@@ -68,6 +68,21 @@ const CreateContainer = () => {
       );
     };
 
+    const deleteImage = () => {
+      setIsLoading(true);
+      const deleteRef = ref(storage, imageAsset);
+      deleteObject(deleteRef).then(() => {
+        setImageAsset(null);
+        setIsLoading(false);
+        setFields(true);
+        setMsg("Image deleted successfully 😊");
+        setAlertStatus("success");
+        setTimeout(() => {
+          setFields(false);
+        }, 4000);
+      });
+    };
+
     return (
   
            <div className="w-full min-h-screen flex items-center justify-center">
@@ -154,7 +169,7 @@ const CreateContainer = () => {
                     <button
                       type="button"
                       className="absolute bottom-3 right-3 p-3 rounded-full bg-red-500 text-xl cursor-pointer outline-none hover:shadow-md  duration-500 transition-all ease-in-out"
-                    //   onClick={deleteImage}
+                      onClick={deleteImage}
                     >
                       <MdDelete className="text-white" />
                     </button>
